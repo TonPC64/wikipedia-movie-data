@@ -14,7 +14,7 @@ JSON.parse(fs.readFileSync('genres.json')).forEach(function(genre) {
 });
 
 let years = [];
-for (let year = 2020; year <= 2023; year++)
+for (let year = 2020; year <= 2025; year++)
   years.push(year);
 
 invalid_genres = {};
@@ -49,7 +49,7 @@ async function main() {
     console.log(`${movie.title}: "${movie.extract.split('.')[0]}"`);
   }
 
-  fs.writeFileSync('movies.json', JSON.stringify(movies, null, 2), { encoding: 'utf8' });
+  fs.writeFileSync('movies-2020s.json', JSON.stringify(movies, null, 2), { encoding: 'utf8' });
 }
 
 async function scrapeMoviesForYear(year) {
